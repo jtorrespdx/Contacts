@@ -54,7 +54,7 @@ class Contacts
 
     static function deleteAll()
     {
-        $_SESSION['list_of_contaacts'] = array();
+        $_SESSION['list_of_contacts'] = array();
     }
 }
 ?>

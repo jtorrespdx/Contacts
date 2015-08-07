@@ -26,11 +26,17 @@
                    <input id='phone_number' name='phone_number' class='form-control' type='number'>
             </div>
             <div class='form-group'>
-                   <label for='Adress'>Addrress:</label>
+                   <label for='Adress'>Adrress:</label>
                    <input id='address' name='address' class='form-control' type='text'>
             </div>
 
             <button type='submit'>Update Contacts List</button>
+        </form>
+        <br>
+        <br>
+        <h3>To clear and delete your contacts, press below.</h3>
+        <form action='/delete_contacts' method='post'>
+            <button type='submit'>Clear contacts</button>
         </form>
         </div>
     </body>

@@ -34,10 +34,10 @@ class Contacts
 
     function setAddress($new_Address)
     {
-        $this->address = (string) $new_Adress;
+        $this->address = (string) $new_Address;
     }
 
-    function getAdress()
+    function getAddress()
     {
         return $this->address;
     }

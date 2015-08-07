@@ -7,14 +7,24 @@
         <div class='container'>
         <h1>My Contacts List</h1>
 
-        {% if tasks is not empty %}
-            <p>Current Contacts</p>
+        {% if list_of_contacts is not empty %}
+            <p>Current Contacts:</p>
             <ul>
-                {% for task in tasks %}
-                <li>{{ task.getDescription }}</li>
+                {% for contact in contacts %}
+                <p><strong>{{ contact.getName }}</p>
+                    <ul>
+                        <li>Phone:{{ contact.getPhone_number }}</li>
+                        <li>Address:{{ contact.getAddress }}</li>
+                    </ul>
                 {% endfor %}
             </ul>
+            {% else %}
+
+            <p>Currently, you have no contacts listed.</p>
         {% endif %}
+        <br>
+        <br>
+        <h3>To add a new contact, please fill the form.</h3>
 
         <form action='/create_contact' method='post'>
             <div class='form-group'>
@@ -26,7 +36,7 @@
                    <input id='phone_number' name='phone_number' class='form-control' type='number'>
             </div>
             <div class='form-group'>
-                   <label for='Adress'>Adrress:</label>
+                   <label for='address'>Address:</label>
                    <input id='address' name='address' class='form-control' type='text'>
             </div>
 
@@ -34,7 +44,7 @@
         </form>
         <br>
         <br>
-        <h3>To clear and delete your contacts, press below.</h3>
+        <h3>To clear and delete all contacts, press below.</h3>
         <form action='/delete_contacts' method='post'>
             <button type='submit'>Clear contacts</button>
         </form>

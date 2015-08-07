@@ -10,7 +10,7 @@
         'twig.path' => __DIR__.'/../views'
     ));
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('contacts.html.twig', array('contacts' => Task::getAll()));
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contacts::getAll()));
     });
     $app->post("/contacts", function() use ($app) {
         $task = new task($_POST['description']);

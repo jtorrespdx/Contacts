@@ -1,11 +1,11 @@
 #Contacts Page
-#####To Do using Silex
+#####Contacts page using Silex and Twig
 
 ####By Jose Torres
 
 ##Description
 
-Contacts exercise and assesment using silex and twig. 
+Contacts exercise and assesment using silex and twig.
 
 ##Setup
 

@@ -6,6 +6,13 @@
     </head>
     <body>
         <h1>Here is your new contact:</h1>
+        {% if list_of_contacts is not empty%}
+        <p><strong>{{ Contacts.getName }}</p>
+            <ul>
+                <li>Phone:{{ contacts.getPhone_number }}</li>
+                <li>Address:{{ contacts.getAdress }}</li>
+            </ul>
+        {% endif %}
         <br>
         <a href="/">Return to My Contacts List page.</a>
 

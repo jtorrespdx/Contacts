@@ -2,24 +2,32 @@
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Contacts.php";
     session_start();
+    /* Perhaps add contacts here? Unclear on instructions whether they should be a few already save here. */
+
     if (empty($_SESSION['list_of_contacts'])) {
         $_SESSION['list_of_contacts'] = array();
     }
     $app = new Silex\Application();
+
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
+
     $app->get("/", function() use ($app) {
         return $app['twig']->render('contacts.html.twig', array('contacts' => Contacts::getAll()));
     });
-    $app->post("/contacts", function() use ($app) {
-        $task = new task($_POST['description']);
-        $task->save();
-        return $app['twig']->render('create_task.html.twig', array('newtask' => $task));
+
+    $app->post("/create_contact", function() use ($app) {
+        $new_contact = new Contacts($_POST['name'], $_POST['phone_number'], $POST[address]);
+        $new_contact->save();
+
+        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact));
     });
-    $app->post("/delete_tasks", function() use ($app) {
-        Task::deleteAll();
-        return $app['twig']->render('delete_tasks.html.twig');
+
+    $app->post("/delete_contacts", function() use ($app) {
+        Contacts::deleteAll();
+        return $app['twig']->render('delete_contacts.html.twig');
     });
+
     return $app;
 ?>

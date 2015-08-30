@@ -10,12 +10,12 @@ Contacts exercise and assesment using silex and twig.
 ##Setup
 
 Clone repository from GitHub.
-Run $ composer install.
+In terminal run $ composer install
 Enjoy.
 
 ##Technologies Used
 
-PHP, html, css, silex, twig
+PHP, HTML5, css3, Silex, Twig
 
 ###Legal
 

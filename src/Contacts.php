@@ -1,60 +1,70 @@
 <?php
-class Contacts
-{
-    private $name;
-    private $phone_number;
-    private $address;
 
-    function __construct($name, $phone_number, $address)
+/////Declaring the Contact class/////////
+class Contact
     {
-        $this->name = $name;
-        $this->phone_number = $phone_number;
-        $this->address = $address;
-    }
+        private $name;
+        private $phone_number;
+        private $address;
 
-    function setName($new_Name)
-    {
-        $this->name = (string) $new_Name;
-    }
 
-    function getName()
-    {
-        return $this->name;
-    }
+        ////////constructor for Contact class///////////
+        function __construct($name, $phone_number, $address)
+        {
+            $this->name = $name;
+            $this->phone_number = $phone_number;
+            $this->address = $address;
+        }
 
-    function setPhone_number($new_Phone_number)
-    {
-        $this->phone_number = (float) $new_Phone_number;
-    }
 
-    function getPhone_number()
-    {
-        return $this->phone_number;
-    }
+        ///////Getters and Setters for Contact properties///////
+        function setName($new_name)
+        {
+            $this->name = (string) $new_name;
+        }
 
-    function setAddress($new_Address)
-    {
-        $this->address = (string) $new_Address;
-    }
+        function getName()
+        {
+            return $this->name;
+        }
 
-    function getAddress()
-    {
-        return $this->address;
-    }
+        function setPhoneNumber($new_phone_number)
+        {
+            $this->phone_number = (float) $new_phone_number;
+        }
 
-    function save()
-    {
-        array_push($_SESSION['list_of_contacts'], $this);
-    }
+        function getPhoneNumber()
+        {
+            return $this->phone_number;
+        }
 
-    static function getAll()
-    {
-        return $_SESSION['list_of_contacts'];
-    }
+        function setAddress($new_address)
+        {
+            $this->address = (string) $new_address;
+        }
 
-    static function deleteAll()
-    {
-        $_SESSION['list_of_contacts'] = array();
+        function getAddress()
+        {
+            return $this->address;
+        }
+
+
+        //////////Save function for user input contacts
+        function save()
+        {
+            array_push($_SESSION['list_of_contacts'], $this);
+        }
+        //////////returns all Contacts in the global session variable
+        static function getAll()
+        {
+            return $_SESSION['list_of_contacts'];
+        }
+
+
+        //////////clears session by replacing it with a blank array, essenctially deleting all contacts.
+        static function deleteAll()
+        {
+            $_SESSION['list_of_contacts'] = array();
+        }
     }
-}
 ?>

@@ -19,7 +19,7 @@ PHP, html, css, silex, twig
 
 ###Legal
 
-Copyright (c) 2015 {Jose Torres}
+Copyright (c) 2015 Jose Torres
 
 This software is licensed under the MIT license.
 

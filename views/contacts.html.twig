@@ -10,10 +10,10 @@
         {% if list_of_contacts is not empty %}
             <p>Current Contacts:</p>
             <ul>
-                {% for contact in contacts %}
+                {% for contact in list_of_contacts %}
                 <p><strong>{{ contact.getName }}</p>
                     <ul>
-                        <li>Phone:{{ contact.getPhone_number }}</li>
+                        <li>Phone:{{ contact.getPhoneNumber }}</li>
                         <li>Address:{{ contact.getAddress }}</li>
                     </ul>
                 {% endfor %}

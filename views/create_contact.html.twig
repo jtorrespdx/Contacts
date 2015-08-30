@@ -2,7 +2,7 @@
 <html>
     <head>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-        <title>Succesful submitted.</title>
+        <title>Succesful submit.</title>
     </head>
     <body>
     <div class="container">
@@ -10,7 +10,7 @@
         {% if newcontact is not empty %}
         <p><strong>{{ newcontact.getName }}</p>
             <ul>
-                <li>Phone:{{ newcontact.getPhone_number }}</li>
+                <li>Phone:{{ newcontact.getPhoneNumber }}</li>
                 <li>Address:{{ newcontact.getAddress }}</li>
             </ul>
         {% endif %}
